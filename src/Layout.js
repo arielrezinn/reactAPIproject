@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import ReactDOM from 'react-dom';
-import Map from './Map'
+//import ReactDOM from 'react-dom';
+import MapContainer from './MapContainer'
 import Options from './Options'
 import './index.css';
 
@@ -17,7 +17,7 @@ class Layout extends Component {
           </Column>
           <Column
             className="map">
-            <Map></Map>
+            <MapContainer></MapContainer>
           </Column>
         </Row>
     );
