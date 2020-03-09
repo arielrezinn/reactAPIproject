@@ -4,8 +4,8 @@ import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 import axios from 'axios';
 import './index.css';
 // import { yelp } from 'yelp-fusion';
-// my maps api key 'AIzaSyC-FNgVzK38CFoYC6E4-olIUu418f90H2I'
-// my yelp api key 'TQl-ldodqDuIn-Wi3xJ5xkB-nsuPgeUvlti5NCOhIJPKTssK0BA5EjYWnwasmMSca20hq1UxyNSYPLL1c1URFMrztx4w9VfRXcOiP8f0XlWgSxZMRvIKQYlO6htPXnYx'
+// maps api key 'AIzaSyC-FNgVzK38CFoYC6E4-olIUu418f90H2I'
+// yelp api key 'TQl-ldodqDuIn-Wi3xJ5xkB-nsuPgeUvlti5NCOhIJPKTssK0BA5EjYWnwasmMSca20hq1UxyNSYPLL1c1URFMrztx4w9VfRXcOiP8f0XlWgSxZMRvIKQYlO6htPXnYx'
 
 const mapStyles = {
   width: '68.7%',
@@ -32,20 +32,9 @@ class MapContainer extends Component {
   getPlaces(searchterm) {
     fetch('../server/routes/search')
       .then(places => this.setState({ places })
-      .catch(e => {console.log(e)})
     )
   };
 
-   //  let config = {
-   //    headers: {
-   //      "Authorization":'Bearer TQl-ldodqDuIn-Wi3xJ5xkB-nsuPgeUvlti5NCOhIJPKTssK0BA5EjYWnwasmMSca20hq1UxyNSYPLL1c1URFMrztx4w9VfRXcOiP8f0XlWgSxZMRvIKQYlO6htPXnYx'},
-   //    params: {
-   //      term: 'ice cream',
-   //      latitude: 43.071,
-   //      longitude: -89.398,
-   //      radius: 10000
-   //    }
-   // };
 
 
 
@@ -71,7 +60,7 @@ class MapContainer extends Component {
     // }).catch(e => {
     //   console.log(e);
     // });
-  }
+    //}
 
   onMarkerClick = (props, marker, e) =>
   this.setState({
@@ -100,8 +89,7 @@ class MapContainer extends Component {
          lng: store.longitude
        }}/>
       );
-     onClick={() => console.log("You clicked me!")} />
-   });
+   }));
   }
 
   componentDidMount() {
@@ -119,7 +107,6 @@ class MapContainer extends Component {
   render() {
     this.getPlaces(this.props.craving)
     return (
-      // you must set the container height explicitly
       <div>
         <Map
           google={this.props.google}
